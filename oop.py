@@ -8,6 +8,7 @@ class Player:
   def introduce(self):
     print(f"Hello I'm {self.name} And I play for {self.team}")
 
+
 class Team:
 
   def __init__(self, team_name):
@@ -23,19 +24,13 @@ class Team:
     self.players.append(new_player)
 
 
-player = Player(
-  name = "player",
-  team = 'Team X'
-)
+player = Player(name="player", team='Team X')
 
-player2 = Player(
-  name = 'player2',
-  team = 'Team Y'
-)
+player2 = Player(name='player2', team='Team Y')
 
 team_x = Team('Team_X')
 
-team_x.add_player("heoolll")
+team_x.add_player("helllow")
 
 team_y = Team("Team_Y")
 
