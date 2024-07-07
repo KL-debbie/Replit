@@ -13,13 +13,13 @@ else:
 
 
 def make_juice(fruit):
-  return f"{fruit} + �"
+  return f"{fruit} + 🍉"
 
 def add_ice(juice):
-  return f"{juice} + �"
+  return f"{juice} +"🧊"
 
 def add_suger(ice):
-  return f"{ice} + �"
+  return f"{ice} + 🍬"
 
 juice = make_juice("�")
 cold_juice = add_ice(juice)
