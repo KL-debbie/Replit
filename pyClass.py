@@ -8,10 +8,15 @@ class Dog:
   def sleep(self):
     print("zzzzzzz....")
 
+
 class GuardDog(Dog):
 
   def __init__(self, name, breed):
-    super().__init__(name, breed, 5,)
+    super().__init__(
+        name,
+        breed,
+        5,
+    )
     self.aggresive = True
 
   def rrrr(self):
@@ -21,7 +26,11 @@ class GuardDog(Dog):
 class puppy(Dog):
 
   def __init__(self, name, breed):
-    super().__init__(name, breed, 0.1,)
+    super().__init__(
+        name,
+        breed,
+        0.1,
+    )
     self.spoiled = True
 
   def __str__(self):
@@ -32,16 +41,15 @@ class puppy(Dog):
 
   def introduce(self):
     self.woof()
-    print(f"My name is {self.name} and I am a baby {self.breed}")
+    print(f"Hello My name is {self.name} and I am a baby {self.breed}")
     self.woof()
 
-ruffus = puppy(
-  name ='ruffus',
-  breed ='beagle')
+
+ruffus = puppy(name='ruffus', breed='beagle')
 
 bibi = GuardDog(
-  name = 'bibi',
-  breed= 'dalmatian',
+    name='bibi',
+    breed='dalmatian',
 )
 
 ruffus.woof()
