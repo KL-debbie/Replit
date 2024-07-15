@@ -1,13 +1,13 @@
 class Human:
-  def __init__(self,name,age,gender):
+  def __init__(self,name,age,gender):    # 생성자 추가
     self.name = name
     self.age = age
     self.gender = gender
 
-  def who(self):
+  def who(self):      # 출력 메소드
     print('이름 :', self.name, '나이 :', self.age, '성별 :', self.gender)
 
-  def selfInfo(self,name,age,gender):
+  def setInfo(self,name,age,gender):    # 정보 설정 메소드
     self.name = name
     self.age = age
     self.gender = gender
@@ -19,10 +19,10 @@ areum = Human("모름", 0, "모름")
 areum.who()
 areum = Human("아름", 25, "여자")
 del areum
-#------------------------------------------
+#-----------------------------------------------
 class Stock:
 
-  def __init__(self,name,code,per,pbr,rate):
+  def __init__(self,name,code,per,pbr,rate):      #입력 받을 수 있도록 생성
     self.name = name
     self.code = code
     self.per = per
@@ -35,19 +35,19 @@ class Stock:
   def set_name(self,name):
     self.name = name
 
-  def get_name(self):
+  def get_name(self):          # 리턴하는 메서드 
     return self.name
 
-  def get_code(self):
+  def get_code(self):          # ""
     return self.code
 
-  def set_per(self,per):
+  def set_per(self,per):      # 변경될 수 있는 값, 입력 받는 메서드 추가
     return self.per
 
-  def set_pbr(self,pbr):
+  def set_pbr(self,pbr):      # 변경될 수 있는 값, 입력 받는 메서드 추가
     return self.pbr
 
-  def set_rate(self,rate):
+  def set_rate(self,rate):    # 변경될 수 있는 값, 입력 받는 메서드 추가
     return self.rate
   
 삼성 = Stock("삼성전자", "005930",'15.79','1.33','2.83')
@@ -57,7 +57,7 @@ print(삼성.get_name())
 print(삼성.get_code())
 삼성.set_per(12.75)
 print(삼성.per)
-#------------------------------------------
+#-----------------------------------------------
 stock_list = []
 
 삼성 = Stock("삼성전자", "005930",15.79, 1.33, 2.83)

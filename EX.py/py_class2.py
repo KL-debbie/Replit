@@ -1,5 +1,4 @@
 import random
-from sre_constants import AT_LOC_NON_BOUNDARY
 
 class Account:
 
@@ -62,20 +61,3 @@ print(kimm.balance)
 
 pyy = Account('py', 100000)
 pyy.display_info()
-#------------------------------------------
-class car:
-  def __init__(self,wheel,price):
-    self.wheel = wheel
-    self.price = price
-
-class 자동차(car):
-  def __init__(self, wheel, price):
-      super().__init__(wheel, price)
-
-  def info(self):
-      print("wheel ", self.wheel)
-      print("price ", self.price)
-
-
-car1= car(4, 1000)
- 
