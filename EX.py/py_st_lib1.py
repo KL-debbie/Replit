@@ -14,7 +14,8 @@ print(day.weekday())
 day = datetime.date(2024,7,18)
 print(day.isoweekday())
 
-#-------------------------------------------------
+#-----------------------------------------------------------------
+# time 함수
 # time.time 1970년 1월 1일 0시 0분 0초 기준으로 지난 시간을 초 단위로 리턴
 import time
 print(time.time())
@@ -33,7 +34,7 @@ print(time.ctime())
 
 # sleep() 일정한 시간 간격을 두고 루프 실행 가능
 
-#-------------------------------------------------
+#-----------------------------------------------------------------
 # math 함수
 import math
 
@@ -45,7 +46,7 @@ print(gcd)
 lcm = math.lcm(60,100,80)
 print(lcm)
 
-#-------------------------------------------------
+#-----------------------------------------------------------------
 # random 함수
 import random
 
@@ -57,7 +58,7 @@ print(rnd)
 rnd1 = random.randint(1,10)
 print(rnd1)
 
-#-------------------------------------------------
+#-----------------------------------------------------------------
 # itertools 함수
 import itertools
 
@@ -72,3 +73,16 @@ result = itertools.zip_longest(students, snacks, fillvalue='새우깡')
 print(list(result))
 
 # permutation(iterable, r) 순열 구하기
+# 반복 가능 객체 중에서 r개를 선택한 순열을 이터레이터로 리턴하는 함수
+per = list(itertools.permutations(['1', '2', '3'], 2))
+print(per)
+
+# combinations(iterable, r)
+# 반복 가능 객체 중에서 r개를 선택한 조합을 이터레이터로 리턴하는 함수
+
+# 1~45의 숫자 중에서 6개를 뽑는 경우의 수
+it = itertools.combinations(range(1, 46), 6)
+it = len(list(it))  # 이터레이터 개수 세기
+print(it)
+
+#-----------------------------------------------------------------
