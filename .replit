@@ -1,6 +1,6 @@
 # 파일이 폴더 안에 존재할 때의 경로
-run = "python3 EX.py/py_class1.py"
+# run = "python3 EX.py/py_func.py"
 # 파일이 폴더 안에 존재하지 않을 때의 경로
-# run = "python3 py_class1.py"
+run = "python3 paging.py"
 
 modules = ["python-3.10"]
