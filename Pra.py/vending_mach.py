@@ -72,5 +72,3 @@ class CoffeeVM(Products):
       print(texts.products_out % (name, int(change)))
     else:
       print(texts.nenough_coins % (int(coinValue)))
-
-
