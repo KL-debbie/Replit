@@ -75,3 +75,45 @@ if input_money >= total_price:
 else:
   print("금액이 부족하므로 주문 취소됩니다.")
 '''
+
+# 구구단
+'''
+print('구구단~~~~')
+
+num = int(input('몇 단 출력할까유~   \n'))
+
+for i in range(1, 10):
+  print(f'{num} * {i} = {num * i}')
+'''
+
+# 사전
+'''
+dict_es = {'señora':'아가씨', 'madre':'엄마', 'cuchillo':'나이프', 'gazpacho':'토마토냉스프', 'pollo asado':'닭구이', 'vino tinto':'적포도주', 'helado':'아이스크림', 'huevo frito':"계란 후라이", 'padre':'아빠'}
+
+for i in dict_es:
+  user_input = input(f"{i}의 뜻은? \n")
+
+  if user_input == dict_es[i]:
+    print("정답입니다")
+  else:
+    print(f"오답입니다. 정답은 {dict_es[i]} 입니다")
+'''
+
+# 행맨
+dict_es = ['señora', 'madre', 'cuchillo', 'gazpacho', 'pollo asado', 'vino tinto', 'helado', 'huevo frito', 'padre']
+
+import random
+
+answer = random.choice(dict_es)
+guessLetter = list('_'*len(answer))
+
+game_over = False
+while not game_over:
+  user_guess = input('한 글자씩 추측').lower()
+
+  if len(user_guess) == 1 and user_guess.isalpha():
+    for i in range(len(answer)):
+      if answer[i] == user_guess:
+        guessLetter[i] = user_guess
+      else:
+        print('한 글자씩 입력 ')
