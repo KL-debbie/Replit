@@ -100,20 +100,67 @@ for i in dict_es:
 '''
 
 # 행맨
+'''
 dict_es = ['señora', 'madre', 'cuchillo', 'gazpacho', 'pollo asado', 'vino tinto', 'helado', 'huevo frito', 'padre']
 
 import random
 
 answer = random.choice(dict_es)
-guessLetter = list('_'*len(answer))
-
+guessLetter = list('_'*len(answer))               
+life = 3
 game_over = False
+
 while not game_over:
+  print(f"chance : {life}")
   user_guess = input('한 글자씩 추측').lower()
 
   if len(user_guess) == 1 and user_guess.isalpha():
     for i in range(len(answer)):
       if answer[i] == user_guess:
         guessLetter[i] = user_guess
-      else:
-        print('한 글자씩 입력 ')
+    print(guessLetter)
+    if '_' not in guessLetter:
+      print("정답입니다")
+      game_over = True
+
+    if user_guess not in answer:
+      life -= 1
+      if life == 0:
+        game_over = True
+        print(f"Fali answer is {answer}")
+  else:
+    print('한 글자씩 입력 ')
+ '''
+
+# 꽃 그리기
+'''
+import turtle as t
+
+t.speed(0)
+
+# 꽃잎 한장 표현
+def petal():
+  for i in range(2):
+    t.circle(150,110)
+    t.left(70)
+
+# 꽃 만들기
+def d_flower():
+  t.color('pink')
+  t.begin_fill()
+  for i in range(6):
+    petal()
+    t.left(360/6)
+  t.end_fill
+  # 꽃 수술 표현
+  t.goto(0,-30)
+  t.color('deeppink')
+  t.begin_fill()
+  t.circle(30)
+  t.end_fill()
+
+t.ht()
+t.bgcolor('lightblue')
+d_flower()
+'''
+
