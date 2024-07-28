@@ -164,3 +164,91 @@ t.bgcolor('lightblue')
 d_flower()
 '''
 
+# 그림판 만들기
+'''
+import tkinter as tk
+
+def paint(event):
+    x1, y1 = event.x - 1, event.y - 1
+    x2, y2 = event.x + 1, event.y + 1
+    if eraser_mode:
+        canvas.create_rectangle(x1, y1, x2, y2, fill='white', outline='white', width=pen_size)
+    else:
+        canvas.create_oval(x1, y1, x2, y2, fill=pen_color, outline=pen_color, width=pen_size)
+
+def blue():
+    global pen_color
+    pen_color = 'blue'
+
+def cg_color(color):
+    global pen_color
+    pen_color = color
+
+def size_up():
+    global pen_size
+    pen_size += 1
+
+def size_down():
+    global pen_size
+    if pen_size > 1:
+        pen_size -= 1
+
+def toggle_eraser():
+    global eraser_mode
+    eraser_mode = not eraser_mode
+
+pen_color = "black"
+pen_size = 1
+eraser_mode = False
+
+window = tk.Tk()
+canvas = tk.Canvas(window, width=500, height=500, bg='white')
+canvas.pack()
+canvas.bind("<B1-Motion>", paint)
+
+button_b = tk.Button(window, text="파랑", width=5, bg='lightblue', command=blue, font=('나눔바른펜', 12))
+button_b.place(x=0, y=0)
+
+button_p = tk.Button(window, text="핑크", width=5, bg='pink', command=lambda: cg_color("pink"), font=('나눔바른펜', 12))
+button_p.place(x=0, y=40)
+
+button_r = tk.Button(window, text="빨강", width=5, bg='red', command=lambda: cg_color("red"), font=('나눔바른펜', 12))
+button_r.place(x=0, y=80)
+
+button_sizeup = tk.Button(window, text="bold", command=size_up)
+button_sizeup.place(x=0, y=120)
+
+button_sizedown = tk.Button(window, text="thin", command=size_down)
+button_sizedown.place(x=0, y=160)
+
+button_eraser = tk.Button(window, text="지우개", command=toggle_eraser)
+button_eraser.place(x=0, y=200)
+
+window.mainloop()
+'''
+
+# 클릭 박스 만들기
+'''
+import tkinter as tk
+
+def check_result():
+  if checked.get() == True:
+    label.config(text='Clicked!!!', font=('나눔바른펜', 20, 'bold'))
+  else:
+    label.config(text='No Clicked!!!', font=('나눔바른펜', 20, 'bold'))
+
+    
+
+window = tk.Tk()  # tk()가 아닌 tk.Tk()를 사용해야 합니다.
+window.title("checkBox")
+window.geometry('300x300')
+
+checked = tk.BooleanVar()
+check_btn = tk.Checkbutton(window, text="checkbox", variable=checked, command=check_result)
+
+check_btn.pack()
+label =tk.Label(window, text='')
+label.pack()
+
+window.mainloop()
+'''
