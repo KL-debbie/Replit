@@ -18,16 +18,4 @@ cal = calendar.month(year,month)
 print(cal)
 
 print('------------------------')
-# 팩토리얼
-
-def factorial(n):
-  if n == 1:
-    return 1
-  else:
-    return n * factorial(n-1)
-
-n = int(input("숫자 입력 : "))
-print(f"{n}의 팩토리얼은 {factorial(n)}")
-
-print('------------------------')
 

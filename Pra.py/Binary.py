@@ -32,3 +32,17 @@ if result != -1:
     print(f"{x}은 배열의 {result}번째 인덱스에 있습니다.")
 else:
     print(f"{x}는 배열에 존재하지 않습니다.")
+
+print('------------------------')
+
+# 팩토리얼
+
+def factorial(n):
+  if n == 1:
+    return 1
+  else:
+    return n * factorial(n-1)
+
+n = int(input("숫자 입력 : "))
+print(f"{n}의 팩토리얼은 {factorial(n)}")
+
