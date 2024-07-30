@@ -69,14 +69,3 @@ def print_x(n):
 size = int(input("X 모양의 크기를 입력하세요 (홀수): "))
 print_x(size)
 
-print('------------------------------------------------')
-
-
-import re
-
-def is_valid_email(email):
-    pattern = r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$'
-    return bool(re.match(pattern, email))
-
-email = input("이메일 주소를 입력하세요: ")
-print(f"유효한 이메일 주소입니다!" if is_valid_email(email) else "유효하지 않은 이메일 주소입니다.")
