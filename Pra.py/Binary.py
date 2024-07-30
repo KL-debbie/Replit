@@ -14,6 +14,7 @@ def binary_search(arr, x):
             return mid
     return -1
 
+
 # 배열 입력 받기
 arr_input = input("배열을 입력하세요 (공백으로 구분된 숫자들): ")
 arr = list(map(int, arr_input.split()))
@@ -37,13 +38,40 @@ print('------------------------')
 
 # 팩토리얼
 
+
 def factorial(n):
-  if n == 1:
-    return 1
-  else:
-    return n * factorial(n-1)
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
 
 n = int(input("숫자 입력 : "))
 print(f"{n}의 팩토리얼은 {factorial(n)}")
 
-  
+
+def encrypt(text, shift):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            shifted = ord(char) + shift
+            if char.islower():
+                if shifted > ord('z'):
+                    shifted -= 26
+            elif char.isupper():
+                if shifted > ord('Z'):
+                    shifted -= 26
+            result += chr(shifted)
+        else:
+            result += char
+    return result
+
+
+def decrypt(text, shift):
+    return encrypt(text, -shift)
+
+
+message = input("메시지를 입력하세요: ")
+encrypted = encrypt(message, 3)
+print(f"암호화된 메시지: {encrypted}")
+print(f"복호화된 메시지: {decrypt(encrypted, 3)}")
