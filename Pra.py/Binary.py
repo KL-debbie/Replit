@@ -46,3 +46,4 @@ def factorial(n):
 n = int(input("숫자 입력 : "))
 print(f"{n}의 팩토리얼은 {factorial(n)}")
 
+  
