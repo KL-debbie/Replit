@@ -49,18 +49,30 @@ def factorial(n):
 n = int(input("숫자 입력 : "))
 print(f"{n}의 팩토리얼은 {factorial(n)}")
 
+print('------------------------')
 
+
+# 암호화 복호화
 def encrypt(text, shift):
     result = ""
     for char in text:
-        if char.isalpha():
+        if char.isalpha() or ('가' <= char <= '힣'):
             shifted = ord(char) + shift
-            if char.islower():
+            if 'a' <= char <= 'z':
                 if shifted > ord('z'):
                     shifted -= 26
-            elif char.isupper():
+                elif shifted < ord('a'):
+                    shifted += 26
+            elif 'A' <= char <= 'Z':
                 if shifted > ord('Z'):
                     shifted -= 26
+                elif shifted < ord('A'):
+                    shifted += 26
+            elif '가' <= char <= '힣':
+                if shifted > ord('힣'):
+                    shifted -= (ord('힣') - ord('가') + 1)
+                elif shifted < ord('가'):
+                    shifted += (ord('힣') - ord('가') + 1)
             result += chr(shifted)
         else:
             result += char
@@ -71,7 +83,13 @@ def decrypt(text, shift):
     return encrypt(text, -shift)
 
 
-message = input("메시지를 입력하세요: ")
+while True:
+    message = input("메시지를 입력하세요: ")
+    if message.isdigit():
+        print("숫자가 아닌 문자를 입력하세요.")
+    else:
+        break
+
 encrypted = encrypt(message, 3)
 print(f"암호화된 메시지: {encrypted}")
 print(f"복호화된 메시지: {decrypt(encrypted, 3)}")
