@@ -39,8 +39,7 @@ while True:
 
 print('------------------------------------------------')
 '''
-filename = "Pra.py/sample.txt"  # 절대 경로 사용
-word_to_search = input("검색할 단어를 입력하세요: ")
+filename = "Pra.py/sample.txt"
 
 # 시도할 인코딩 목록
 encodings = [
@@ -61,14 +60,19 @@ for encoding in encodings:
     except FileNotFoundError:
         print(f"파일을 찾을 수 없습니다: {filename}")
         break
-    except PermissionError:
-        print(f"파일에 접근할 수 있는 권한이 없습니다: {filename}")
-        break
 
 # 파일을 성공적으로 읽었는지 확인
 if lines:
-    for line_number, line in enumerate(lines, 1):
-        if word_to_search in line:
-            print(f"{line_number}번째 줄: {line.strip()}")
+    while True:
+        word_to_search = input("검색할 단어를 입력하세요: ")
+        found = False
+        for line_number, line in enumerate(lines, 1):
+            if word_to_search in line:
+                print(f"{line_number}번째 줄: {line.strip()}")
+                found = True
+        if not found:
+            print("찾는 단어가 없습니다. 다시 검색해 주세요.")
+        else:
+            break
 else:
     print("파일을 읽을 수 있는 인코딩을 찾지 못했습니다.")
